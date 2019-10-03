@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>React Hello World</title>
+  <title>Sally Student</title>
+  <link href="index.css" rel="stylesheet">
 </head>
 <body>
   <div id="application-root"></div>
@@ -16,14 +17,83 @@
     function App(props) {
       console.log(props)
       return (
-        <header>
-          {props.children}
-        </header>
+        <div className="wrapper">
+          <header>
+            <h1>{props.studentName} - Full Stack Developer</h1>
+            <h2>Unbreaking the interenet since 2015</h2>
+          </header>
+          <nav>
+            <ul>
+              <li>
+                <a href="#contact" >Contact</a></li>
+              <li>
+                <a href="#education" >Education</a></li>
+              <li>
+                <a href="#employment-history" >Employment History</a></li>
+              <li>
+                <a href="#resources" >Resources</a></li>
+            </ul>
+          </nav>
+          <main>
+            <section id="contact">
+              <header>
+                <h2>{props.studentName}</h2>
+              </header>
+              <address>
+                <a href="mailto:sally.student@bloc.io">sally.student@bloc.io</a><br/>
+                <a href="tel:503502320">Call Me!</a>
+              </address>
+              <img src="https://m.media-amazon.com/images/M/MV5BMTY5NzE3NzU3MF5BMl5BanBnXkFtZTgwMjg0NTQ5MDE@._V1_.jpg" alt="{props.studentName} with her arms croseed wearing a yellow zebra shirt and blue jeans" />
+            </section>
+            <section id="education">
+              <header>
+                <h2>Education</h2>
+              </header>
+              <h3>University of Kentucky</h3>
+              <h4>College of Agriculture</h4>
+              <p>Bachelor of Science</p>
+            </section>
+            <section id="employment-history">
+              <header>
+                <h2>Employment History</h2>
+              </header>
+              <div>
+                <h3>Bluegrass Farms</h3>
+                <h4>Marketing Director</h4>
+                <p>February, 2011 - November, 2014</p>
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+              </div>
+              <div>
+                <h3>Portland Ultimate</h3>
+                <h4>Lead Developer</h4>
+                <p>November, 2014 - Present</p>
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+              </div>
+            </section>
+            <section id="resources">
+              <header>
+                <h2>Resources</h2>
+              </header>
+              <ul>
+                <li><a href="https://css-tricks.com"><i className="fab fa-css3-alt"></i>  CSS-Tricks</a></li>
+                <li><a href="https://gimletmedia.com/shows/reply-all"><i className="fas fa-microphone"></i>  Reply All</a></li>
+                <li><a href="https://stackoverflow.com/"><i className="fab fa-stack-overflow"></i>  Stack Overflow</a></li>
+                <li><a href="https://www.youtube.com/channel/UCpzRDg0orQBZFBPzeXm1yNg"><i className="fab fa-youtube"></i>  Adam Khoury - YouTube</a></li>
+              </ul>
+            </section>
+          </main>
+          <footer>
+            <p>Thanks for reviewing!</p>
+            <address>
+              <p>Check out my site live at: <a href="https://shawnrbmeyer.com">shawnrbmeyer.com</a></p>
+            </address>
+          </footer>
+          </div>
       );
     }
 
     ReactDOM.render(
-      <App className='my-class'>
+      <App className='my-class' studentName='Sally Student'>
         <h1>Current Page Title!</h1>
       </App>,
       document.querySelector('#application-root')
